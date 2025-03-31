@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthTrack Pro - Register</title>
+    <link rel="stylesheet" href="assets/css/auth.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Additional registration-specific styles */
+        .register-container .form-row {
+            display: flex;
+            gap: 15px;
+        }
+        .register-container .form-row .form-group {
+            flex: 1;
+        }
+        .password-strength {
+            margin-top: 10px;
+        }
+        .strength-meter {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 5px;
+        }
+        .strength-bar {
+            height: 4px;
+            flex: 1;
+            background: #eee;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        .strength-text {
+            font-size: 12px;
+            color: var(--text-medium);
+        }
+        .terms-agreement {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        .terms-agreement a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container register-container">
+        <div class="auth-header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm-1.06 13.54L7.4 12l1.41-1.41 2.12 2.12 4.24-4.24 1.41 1.41-5.64 5.66z" fill="#ffffff"/>
+                    </svg>
+                </div>
+                <h1 class="logo-text">HealthTrack Pro</h1>
+            </div>
+            <p>Create your personal health account</p>
+        </div>
+
+        <form class="auth-form" id="registerForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" class="form-control" placeholder="John" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" class="form-control" placeholder="Doe" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="registerEmail">Email Address</label>
+                <input type="email" id="registerEmail" class="form-control" placeholder="your@email.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" class="form-control" placeholder="+1 (123) 456-7890">
+            </div>
+
+            <div class="form-group">
+                <label for="userType">I am a:</label>
+                <select id="userType" class="form-control" required>
+                    <option value="" disabled selected>Select account type</option>
+                    <option value="patient">Patient</option>
+                    <option value="doctor">Doctor</option>
+                    <option value="caregiver">Caregiver</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="registerPassword">Password</label>
+                <div class="password-wrapper">
+                    <input type="password" id="registerPassword" class="form-control" placeholder="Create a password" required>
+                    <i class="toggle-password" data-target="registerPassword">👁️</i>
+                </div>
+                <div class="password-strength">
+                    <div class="strength-meter">
+                        <div class="strength-bar" data-strength="1"></div>
+                        <div class="strength-bar" data-strength="2"></div>
+                        <div class="strength-bar" data-strength="3"></div>
+                    </div>
+                    <div class="strength-text">Password strength: <span id="strengthLevel">Weak</span></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm your password" required>
+            </div>
+
+            <div class="terms-agreement">
+                <input type="checkbox" id="agreeTerms" required>
+                <label for="agreeTerms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Create Account</button>
+
+            <div class="auth-footer">
+                Already have an account? <a href="login.html">Sign in</a>
+            </div>
+        </form>
+    </div>
+
+    <script src="assets/js/auth.js"></script>
+</body>
+</html>
